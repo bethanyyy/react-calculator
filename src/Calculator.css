@@ -1,0 +1,82 @@
+.calculator {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 570px;
+    border: 2px solid #111;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0.5em 0.5em 0 #111;
+}
+
+.calculator__output {
+    /* box-sizing: border-box; */
+    background-color: #b0f3f7;
+    flex: 0.2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0.5em;
+
+    border-bottom: 2px solid #111;
+}
+
+.output__previousOperand {
+    /* flex: 0.3; */
+    font-size: 1.1em;
+    padding: 0.5em 0.5em 0 0;
+}
+
+.output__inputPlaceholder {
+    /* font-size: 3em; */
+    opacity: 0.5;
+}
+
+.output__currentInput {
+    /* flex: 0.7; */
+    /* font-size: 3em; */
+    /* color: black; */
+    transition: all 500ms ease;
+}
+
+/* .output__currentInput:hover { */
+    /* font-size: 1em; */
+    /* color: white; */
+    /* transition: fontSize, 500ms, ease; */
+/* } */
+
+.calculator__keypad {
+    background-color: pink;
+    flex: 0.8;
+
+    display: grid;
+    padding: 1em;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5em;
+}
+
+.calculator__spanTwo {
+    grid-column: span 2 / auto;
+}
+
+button {
+    border-radius: 2em;
+    /* border: none; */
+    border: 1px solid #111;
+    outline: none;
+    background-color: aliceblue;
+    cursor: pointer;
+    font-size: 1em;
+
+    transition: transform 200ms ease;
+}
+
+button:hover {
+    background-color: #f4d6ff;
+    transform: scale(1.07);
+}
+
+button:active {
+    transform: scale(0.7);
+}
