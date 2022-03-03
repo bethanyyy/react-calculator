@@ -28,7 +28,7 @@ export const ACTIONS = {
             if (action.params.newInput === '0' && state.currentOperand === '0') {
                 return state;
             }
-            if (action.params.newInput === '.' && state.currentOperand.includes('.')) {
+            if (action.params.newInput === '.' && state.currentOperand && state.currentOperand.includes('.')) {
                 return state;
             }
             return {
@@ -124,6 +124,9 @@ function formatOperand(operand) {
     if (operand == null) return ;
     const [integer, decimal] = operand.toString().split('.');
     console.log(integer);
+    if (integer == null) {
+        return `0.${decimal || ''}`
+    }
     if (decimal == null) {
         return INTEGER_FORMATTER.format(integer);
     } else {
