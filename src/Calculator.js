@@ -74,6 +74,9 @@ export const ACTIONS = {
                     currentOperand: null
                 }
             }
+            if (state.currentOperand == null) {
+                return state;
+            }
             if (state.currentOperand.length == 1) {
                 return {
                     ...state,
@@ -139,7 +142,7 @@ function formatOperand(operand) {
 
 function Calculator() {
 
-    const [currOperandFontSize, setCurrOperandFontSize] = useState("5vh");
+    const [currOperandFontSize, setCurrOperandFontSize] = useState("5.2vh");
     const [{previousOperand, currentOperand, operation}, dispatch] = useReducer(reducer, {});
     const currOperandRef = useRef(null);
     const outputRef = useRef(null);
@@ -157,7 +160,7 @@ function Calculator() {
             setCurrOperandFontSize("3.5vh");
         }          
         if (currentOperand == null) {
-            setCurrOperandFontSize("5vh");
+            setCurrOperandFontSize("5.2vh");
         }
     }, [currentOperand])
 
