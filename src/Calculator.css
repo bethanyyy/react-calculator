@@ -27,7 +27,7 @@
 
 .output__previousOperand {
     /* flex: 0.3; */
-    font-size: 1.1em;
+    font-size: 2vh;
     padding: 0.5em 0.5em 0 0;
 }
 

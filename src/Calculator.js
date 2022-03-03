@@ -139,7 +139,7 @@ function formatOperand(operand) {
 
 function Calculator() {
 
-    const [currOperandFontSize, setCurrOperandFontSize] = useState("3em");
+    const [currOperandFontSize, setCurrOperandFontSize] = useState("5vh");
     const [{previousOperand, currentOperand, operation}, dispatch] = useReducer(reducer, {});
     const currOperandRef = useRef(null);
     const outputRef = useRef(null);
@@ -154,10 +154,10 @@ function Calculator() {
         console.log("output width: " + outputRef.current.offsetWidth);
 
         if (currOperandRef.current.offsetWidth > outputRef.current.offsetWidth) {
-            setCurrOperandFontSize("2em");
+            setCurrOperandFontSize("3.5vh");
         }          
         if (currentOperand == null) {
-            setCurrOperandFontSize("3em");
+            setCurrOperandFontSize("5vh");
         }
     }, [currentOperand])
 
