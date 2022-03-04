@@ -1,10 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react'
 import './Calculator.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart ,faDeleteLeft ,faDivide, fa0, fa1, fa2, fa3, fa4, fa5, fa6, fa7, fa8, fa9, faMultiply, faPlus, faMinus, faEquals } from '@fortawesome/free-solid-svg-icons'
+import { faStar, faHeart ,faDeleteLeft ,faDivide, fa0, fa1, fa2, fa3, fa4, fa5, fa6, fa7, fa8, fa9, faMultiply, faPlus, faMinus, faEquals } from '@fortawesome/free-solid-svg-icons'
 import KeyPadNumberItem from './KeyPadItem';
 import { useReducer } from 'react';
 import KeyPadOperationItem from './KeyPadOperationItem';
+import { CSSTransition } from 'react-transition-group'
 
 export const ACTIONS = {
     ADD_DIGIT: 'addDigit',
@@ -143,7 +144,7 @@ function formatOperand(operand) {
 function Calculator() {
 
     const [currOperandFontSize, setCurrOperandFontSize] = useState("5.2vh");
-    const [{previousOperand, currentOperand, operation}, dispatch] = useReducer(reducer, {});
+    const [{previousOperand, currentOperand, operation, newCalculation}, dispatch] = useReducer(reducer, {});
     const currOperandRef = useRef(null);
     const outputRef = useRef(null);
 
@@ -238,10 +239,24 @@ function Calculator() {
                 <KeyPadNumberItem dispatch={dispatch} operand='.'>
                     <strong>.</strong>
                 </KeyPadNumberItem>
+
                 <button onClick={() => dispatch({type: ACTIONS.EQUALS})} className='calculator__spanTwo'>
                     <FontAwesomeIcon icon={faEquals}></FontAwesomeIcon>
                 </button>
+                
             </div>
+{/* 
+            <CSSTransition
+                in = {newCalculation == true}
+                unmountOnExit
+                timeout={500}
+                classNames="playBurstStars"
+            >
+                <div className="burstStars">
+                        <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                </div>
+            </CSSTransition> */}
+
         </div>
     )
 }

@@ -1,4 +1,5 @@
 .calculator {
+    position: relative;
     display: flex;
     flex-direction: column;
     /* width: 400px;
@@ -8,7 +9,7 @@
     aspect-ratio: 0.702 / 1 ;
     border: 2px solid #111;
     border-radius: 30px;
-    overflow: hidden;
+    /* overflow: hidden; */
     box-shadow: 0.5em 0.5em 0 #111;
 }
 
@@ -21,6 +22,9 @@
     align-items: flex-end;
     justify-content: space-between;
     padding: 0.5em;
+
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
 
     border-bottom: 2px solid #111;
 }
@@ -53,6 +57,9 @@
     background-color: pink;
     flex: 0.8;
 
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+
     display: grid;
     padding: 1em;
     grid-template-columns: repeat(4, 1fr);
@@ -63,7 +70,7 @@
     grid-column: span 2 / auto;
 }
 
-button {
+.calculator__keypad > button {
     border-radius: 2em;
     /* border: none; */
     border: 1px solid #111;
@@ -75,6 +82,10 @@ button {
     transition: transform 200ms ease;
 }
 
+/* button:last-child {
+    position: relative;
+} */
+
 button:hover {
     background-color: #f4d6ff;
     transform: scale(1.07);
@@ -82,4 +93,35 @@ button:hover {
 
 button:active {
     transform: scale(0.7);
+}
+
+.burstStars {
+    position: absolute;
+    /* right: 27vw;
+    bottom: 23vh; */
+    right: 5%;
+    bottom: 7%;
+    /* z-index: 2; */
+
+    transform: translateX(300%) rotateZ(30deg);;
+    
+
+}
+
+.playBurstStars-enter {
+    opacity: 0;
+}
+
+.playBurstStars-enter-active {
+    opacity: 1;
+    transition: opacity 500ms;
+}
+
+.playBurstStars-exit {
+    opacity: 1;
+}
+
+.playBurstStars-exit-active {
+    opacity: 0;
+    transition: opacity 500ms;
 }

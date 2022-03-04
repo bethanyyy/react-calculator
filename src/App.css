@@ -1,10 +1,40 @@
 .App {
+  /* position: relative; */
   display: flex;
   flex-direction: column;
   height: 100vh;
   align-items: center;
   justify-content: center;
   background-color: #faf3dc;
+  z-index: -1;
+}
+
+.background__container {
+  overflow: hidden;
+}
+
+.background {
+  flex: 1;
+  font-size: 10vh;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  /* color: #97dbd2; */
+  color: #f5e2a4;
+  font-style: italic;
+  inline-size: 100vw;
+  word-break: break-all;
+  /* overflow-wrap: break-word; */
+  height: 100vh;
+  overflow: hidden;
+  opacity: 1;
+}
+
+.container {
+  /* position: relative;
+  z-index: 1; */
+  z-index: 1;
 }
 
 .container__header {
