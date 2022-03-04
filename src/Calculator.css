@@ -4,9 +4,9 @@
     flex-direction: column;
     /* width: 400px;
     height: 570px; */
-    /* width: 55vw; */
+    width: calc(65vh * 0.702);
     height: 65vh;
-    aspect-ratio: 0.702 / 1 ;
+    /* aspect-ratio: 0.702 / 1 ; */
     border: 2px solid #111;
     border-radius: 30px;
     /* overflow: hidden; */
@@ -22,6 +22,7 @@
     align-items: flex-end;
     justify-content: space-between;
     padding: 0.5em;
+    overflow: hidden;
 
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
@@ -41,17 +42,9 @@
 }
 
 .output__currentInput {
-    /* flex: 0.7; */
-    /* font-size: 3em; */
-    /* color: black; */
     transition: all 500ms ease;
 }
 
-/* .output__currentInput:hover { */
-    /* font-size: 1em; */
-    /* color: white; */
-    /* transition: fontSize, 500ms, ease; */
-/* } */
 
 .calculator__keypad {
     background-color: pink;
@@ -82,10 +75,6 @@
     transition: transform 200ms ease;
 }
 
-/* button:last-child {
-    position: relative;
-} */
-
 button:hover {
     background-color: #f4d6ff;
     transform: scale(1.07);
@@ -95,33 +84,82 @@ button:active {
     transform: scale(0.7);
 }
 
-.burstStars {
+.playBurstStars-enter {
     position: absolute;
-    /* right: 27vw;
-    bottom: 23vh; */
     right: 5%;
     bottom: 7%;
-    /* z-index: 2; */
-
-    transform: translateX(300%) rotateZ(30deg);;
-    
-
-}
-
-.playBurstStars-enter {
-    opacity: 0;
+    opacity: 0.3;
+    font-size: 0vh;
+    transform: translateX(0%) rotateZ(0deg);
 }
 
 .playBurstStars-enter-active {
     opacity: 1;
-    transition: opacity 500ms;
+    transform: translateX(230%) rotateZ(100deg);
+    font-size: 5vh;
+    transition: all 300ms ease;
+}
+
+.playBurstStars-enter-done {
+    position: absolute;
+    right: 5%;
+    bottom: 7%;
+    opacity: 0;
+    font-size: 5vh;
+    transform: translateX(230%) rotateZ(100deg);
+    transition: all 500ms ease;
 }
 
 .playBurstStars-exit {
-    opacity: 1;
+    position: absolute;
+    right: 5%;
+    bottom: 7%;
+    opacity: 0;
+    transform: translateX(300%) rotateZ(100deg);
 }
 
 .playBurstStars-exit-active {
     opacity: 0;
-    transition: opacity 500ms;
+    transition: all 500ms ease;
+}
+
+
+.playBurstStarsTwo-enter {
+    position: absolute;
+    right: 5%;
+    bottom: 7%;
+    opacity: 0.3;
+    font-size: 0vh;
+    transform: translateX(0%) rotateZ(0deg);
+}
+
+.playBurstStarsTwo-enter-active {
+    opacity: 1;
+    transform: translateX(220%) translateY(-130%) rotateZ(50deg);
+    font-size: 3vh;
+    transition: all 300ms ease;
+}
+
+.playBurstStarsTwo-enter-done {
+    position: absolute;
+    right: 5%;
+    bottom: 7%;
+    opacity: 0;
+    font-size: 3vh;
+    transform: translateX(220%) translateY(-130%) rotateZ(50deg);
+    transition: all 500ms ease;
+}
+
+.playBurstStarsTwo-exit {
+    position: absolute;
+    right: 5%;
+    bottom: 7%;
+    opacity: 0;
+    transform: translateX(300%) rotateZ(30deg);
+}
+
+.playBurstStarsTwo-exit-active {
+    /* position: absolute; */
+    opacity: 0;
+    transition: all 500ms ease;
 }

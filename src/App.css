@@ -1,5 +1,4 @@
 .App {
-  /* position: relative; */
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -17,7 +16,6 @@
   flex: 1;
   font-size: 10vh;
   position: absolute;
-  z-index: 0;
   top: 0;
   left: 0;
   /* color: #97dbd2; */
@@ -25,15 +23,13 @@
   font-style: italic;
   inline-size: 100vw;
   word-break: break-all;
-  /* overflow-wrap: break-word; */
   height: 100vh;
   overflow: hidden;
   opacity: 1;
+  z-index: 0;
 }
 
 .container {
-  /* position: relative;
-  z-index: 1; */
   z-index: 1;
 }
 

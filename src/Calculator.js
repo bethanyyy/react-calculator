@@ -90,6 +90,9 @@ export const ACTIONS = {
             }
         
         case ACTIONS.EQUALS:
+            if (state.previousOperand == null || state.currentOperand == null || state.operation == null){
+                return state;
+            }
             return {
                 ...state,
                 previousOperand: null,
@@ -185,12 +188,6 @@ function Calculator() {
                 <button onClick={() => dispatch({type: ACTIONS.DELETE_DIGIT})}>
                     <FontAwesomeIcon icon={faDeleteLeft}></FontAwesomeIcon>
                 </button>
-                {/* <KeyPadNumberItem>
-                    <FontAwesomeIcon icon={faDeleteLeft}></FontAwesomeIcon>
-                </KeyPadNumberItem> */}
-                {/* <button>
-                    <FontAwesomeIcon icon={faDivide}></FontAwesomeIcon>
-                </button> */}
                 <KeyPadOperationItem dispatch={dispatch} operand='÷'>
                     <FontAwesomeIcon icon={faDivide}></FontAwesomeIcon>
                 </KeyPadOperationItem>
@@ -245,17 +242,30 @@ function Calculator() {
                 </button>
                 
             </div>
-{/* 
+
             <CSSTransition
                 in = {newCalculation == true}
                 unmountOnExit
-                timeout={500}
+                timeout={300}
                 classNames="playBurstStars"
             >
                 <div className="burstStars">
-                        <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                        {/* <FontAwesomeIcon icon={faStar} color="#51ecf5" style={{stroke: '#51ecf5', strokeWidth: '20px'}}></FontAwesomeIcon> */}
+                        <FontAwesomeIcon icon={faStar} color="#84f2fa"></FontAwesomeIcon>
                 </div>
-            </CSSTransition> */}
+            </CSSTransition>
+
+            <CSSTransition
+                in = {newCalculation == true}
+                unmountOnExit
+                timeout={300}
+                classNames="playBurstStarsTwo"
+            >
+                <div className="burstStars">
+                        {/* <FontAwesomeIcon icon={faStar} color="#ffa6c6" style={{stroke: '#ffa6c6', strokeWidth: '20px'}}></FontAwesomeIcon> */}
+                        <FontAwesomeIcon icon={faStar} color="#ffb8c9"></FontAwesomeIcon>
+                </div>
+            </CSSTransition>
 
         </div>
     )
